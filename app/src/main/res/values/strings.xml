@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="folders_main">Folders</string>
+    <string-array name="folders">
+        <item>Main</item>
+        <item>Deleted</item>
+    </string-array>
+</resources>
