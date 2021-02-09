@@ -19,10 +19,15 @@
             app:srcCompat="@drawable/folder_icon" />
 
         <TextView
-            android:id="@+id/view_tv_folderName"
-            android:layout_width="350dp"
+            android:id="@+id/view_tv_folderPosition"
+            android:layout_width="20dp"
             android:layout_height="30dp"
-            android:text="@string/app_name"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/view_tv_folderName"
+            android:layout_width="330dp"
+            android:layout_height="30dp"
             android:textSize="24sp" />
     </LinearLayout>
 

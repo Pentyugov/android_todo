@@ -1,21 +1,29 @@
 package com.pentyugov.todo.util.adapter;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pentyugov.todo.R;
+import com.pentyugov.todo.model.folder.Folder;
+import com.pentyugov.todo.model.folder.FolderManager;
 
 import java.util.List;
 
 public class FolderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    private List<String> folderNames;
+    private List<Folder> folders;
 
-    public FolderAdapter(List<String> folderNames) {
-        this.folderNames = folderNames;
+    public FolderAdapter(List<Folder> folders) {
+        this.folders = folders;
     }
 
     @NonNull
@@ -31,15 +39,17 @@ public class FolderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TextView name = holder.itemView.findViewById(R.id.view_tv_folderName);
-        name.setOnClickListener(v -> {
-            folderNames.remove(position);
-            this.notifyDataSetChanged();
-        });
-        name.setText(String.format("%s. %s", position + 1, this.folderNames.get(position)));
+        TextView pos = holder.itemView.findViewById(R.id.view_tv_folderPosition);
+        pos.setText(String.format("%s.", position + 1));
+        name.setText(String.format("%s", this.folders.get(position).getName()));
     }
 
     @Override
     public int getItemCount() {
-        return this.folderNames.size();
+        return this.folders.size();
     }
+
+
+
+
 }

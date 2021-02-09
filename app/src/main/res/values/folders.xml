@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sys_folder_main">
+        <item name="name">Main</item>
+        <item name="index">0</item>
+        <item name="isSystem">true</item>
+    </array>
+    <array name="sys_folder_delete">
+        <item name="name">Deleted</item>
+        <item name="index">1</item>
+        <item name="isSystem">true</item>
+    </array>
+</resources>
