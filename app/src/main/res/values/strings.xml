@@ -5,4 +5,16 @@
         <item>Main</item>
         <item>Deleted</item>
     </string-array>
+    <string name="foldersFileName">folders.csv</string>
+    <string name="title_newFolder">New folder</string>
+    <string name="message_newFolderName">Enter folders name</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="title_renameFolder">Rename folder</string>
+    <string name="message_renameFolder">Enter new folders name</string>
+    <string name="menu_item_rename">Rename</string>
+    <string name="menu_item_delete">Delete</string>
+    <string name="note_title">Folder: </string>
 </resources>

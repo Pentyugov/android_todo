@@ -1,15 +1,17 @@
 package com.pentyugov.todo.model.folder;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Folder {
+public class Folder implements Serializable {
     private UUID id;
     private String name;
     private int position;
     private boolean isSystem;
 
     public Folder() {
+
     }
 
     public Folder(String name, int position, boolean isSystem) {

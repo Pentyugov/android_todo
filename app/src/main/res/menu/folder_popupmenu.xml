@@ -4,10 +4,10 @@
     <group android:id="@+id/menu_folder_edit" >
         <item
             android:id="@+id/menu_folder_rename"
-            android:title="Edit"/>
+            android:title="@string/menu_item_rename"/>
         <item
             android:id="@+id/menu_folder_delete"
-            android:title="Delete"/>
+            android:title="@string/menu_item_delete"/>
     </group>
 
 
