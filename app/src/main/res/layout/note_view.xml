@@ -12,37 +12,20 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/view_tv_folderPosition"
-            android:layout_width="20dp"
-            android:layout_height="30dp"
+            android:id="@+id/view_tv_notePosition"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/view_tv_folderName"
-            android:layout_width="330dp"
-            android:layout_height="30dp"
+            android:id="@+id/view_tv_noteTitle"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/view_iv_folders"
-            android:layout_width="206dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/folder_icon" />
+        <CheckBox
+            android:id="@+id/view_cb_isDone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

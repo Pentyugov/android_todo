@@ -1,21 +1,14 @@
 package com.pentyugov.todo.util.adapter;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.os.Build;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pentyugov.todo.R;
 import com.pentyugov.todo.model.folder.Folder;
-import com.pentyugov.todo.model.folder.FolderManager;
 
 import java.util.List;
 

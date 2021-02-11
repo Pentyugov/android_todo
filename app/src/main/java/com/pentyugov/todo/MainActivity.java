@@ -1,46 +1,33 @@
 package com.pentyugov.todo;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.pentyugov.todo.model.folder.Folder;
 import com.pentyugov.todo.model.folder.FolderManager;
-import com.pentyugov.todo.util.listener.RecyclerItemClickListener;
 import com.pentyugov.todo.util.adapter.FolderAdapter;
+import com.pentyugov.todo.util.listener.RecyclerItemClickListener;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
     private TextView title;
     private ImageView newFolder;
     private RecyclerView folders;
-    private List<String> foldersNames;
     private RecyclerView.Adapter adapter;
     private AlertDialog dialogBuilder;
     private List<Folder> systemFolders;
@@ -57,17 +44,15 @@ public class MainActivity extends AppCompatActivity {
         systemFolders = FolderManager.getFoldersFromFile(this);
         if(systemFolders == null || systemFolders.isEmpty()) {
             systemFolders = FolderManager.getSystemFolders(getResources());
+            FolderManager.saveFoldersToFile(systemFolders, this);
         }
 
         title = findViewById(R.id.main_tv_title);
         newFolder = findViewById(R.id.main_iv_newFolder);
+
+
         folders = findViewById(R.id.main_rv_foldersList);
-
-        foldersNames = new ArrayList<>(Arrays
-                                            .asList(getResources()
-                                            .getStringArray(R.array.folders)));
         adapter = new FolderAdapter(systemFolders);
-
         folders.setHasFixedSize(true);
         folders.setLayoutManager(new LinearLayoutManager(this));
         folders.setAdapter(adapter);
@@ -86,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
         );
+        folders.addItemDecoration(new DividerItemDecoration(folders.getContext(), DividerItemDecoration.VERTICAL));
 
         newFolder.setOnClickListener(v -> {
             v.startAnimation(buttonClick);

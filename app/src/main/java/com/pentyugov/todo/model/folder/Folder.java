@@ -1,7 +1,13 @@
 package com.pentyugov.todo.model.folder;
 
+import com.pentyugov.todo.model.note.Note;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 public class Folder implements Serializable {
@@ -9,6 +15,7 @@ public class Folder implements Serializable {
     private String name;
     private int position;
     private boolean isSystem;
+    private List<Note> notes = new ArrayList<>();
 
     public Folder() {
 
@@ -50,5 +57,21 @@ public class Folder implements Serializable {
 
     public void setIsSystem(boolean system) {
         isSystem = system;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+
+    public void addNote(Note note) {
+        this.notes.add(note);
+    }
+
+    public void removeNote(Note note) {
+        this.notes.remove(note);
     }
 }

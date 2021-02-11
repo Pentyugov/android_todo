@@ -15,19 +15,12 @@
 
         <TextView
             android:id="@+id/note_tv_title"
-            android:layout_width="335dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:padding="10dp"
             android:text="@string/note_title"
             android:textSize="30sp"
             android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/note_iv_newFolder"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/folder_new_logo" />
 
     </LinearLayout>
 
@@ -37,9 +30,28 @@
         android:layout_height="50dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mnote_rv_notesList"
+        android:id="@+id/note_rv_notesList"
         android:layout_width="match_parent"
-        android:layout_height="580dp" />
+        android:layout_height="400dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/note_im_addNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/note_logo_3" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
